@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Reference model and experiments for the security analysis of dynamic topic-based security levels in MQTT"
+version: 1.0.0
+date-released: 2026-11-23
+license: MIT
+authors:
+  - given-names: "Fazel"
+    family-names: "Mohammad Ali Pour"
+    email: "mohammadalipour.fazel.ac@gmail.com"
+    affiliation: "Department of Computer Engineering, Islamic Azad University, Babol, Iran"
+  - given-names: "Behnam"
+    family-names: "Barzegar"
+    email: "behnam.barzegar@iau.ac.ir"
+    affiliation: "Department of Computer Engineering, Islamic Azad University, Babol, Iran"
+keywords:
+  - MQTT
+  - Internet of Things
+  - downgrade attack
+  - DLST-MQTT
