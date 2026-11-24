@@ -1,0 +1,13 @@
+{
+ "hmac_sha224_64B_us": 4.284599999664351,
+ "aes256_ctr_64B_us": 6.131250000180444,
+ "ecdsa_secp192r1_sign_us": 262.30333334145445,
+ "ecdsa_secp192r1_verify_us": 247.0943333294902,
+ "ecdsa_secp192r1_sig_bytes": 56,
+ "ecdsa_secp256r1_sign_us": 31.53833332665575,
+ "ecdsa_secp256r1_verify_us": 69.69266665691976,
+ "ecdsa_secp256r1_sig_bytes": 72,
+ "alias_extra_bytes_per_association": 8,
+ "m2_amortised_verify_us_per_msg_p256": 0.06969266665691976,
+ "host": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel"
+}

@@ -1,0 +1,74 @@
+[
+ {
+  "events": 506.6,
+  "precision": 1.0,
+  "recall": 0.9992173048994879,
+  "f1": 0.9996082684835146,
+  "level_inference_accuracy": 1.0,
+  "mode": "baseline",
+  "churn": 0.0
+ },
+ {
+  "events": 506.6,
+  "precision": 0.7738053505328734,
+  "recall": 0.9972181278616169,
+  "f1": 0.871395072360194,
+  "level_inference_accuracy": 1.0,
+  "mode": "baseline",
+  "churn": 0.1
+ },
+ {
+  "events": 506.6,
+  "precision": 0.11176739819885857,
+  "recall": 0.9881431629051243,
+  "f1": 0.20079518786847167,
+  "level_inference_accuracy": 1.0,
+  "mode": "baseline",
+  "churn": 0.5
+ },
+ {
+  "events": 506.6,
+  "precision": 0.07119053014692768,
+  "recall": 0.9846122270963292,
+  "f1": 0.13277031935910732,
+  "level_inference_accuracy": 1.0,
+  "mode": "baseline",
+  "churn": 1.0
+ },
+ {
+  "events": 507.2,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "level_inference_accuracy": 0.5104122854761959,
+  "mode": "alias",
+  "churn": 0.0
+ },
+ {
+  "events": 507.2,
+  "precision": 0.7758687477760305,
+  "recall": 1.0,
+  "f1": 0.8737621093543849,
+  "level_inference_accuracy": 0.5104122854761959,
+  "mode": "alias",
+  "churn": 0.1
+ },
+ {
+  "events": 507.2,
+  "precision": 0.11337874913958061,
+  "recall": 1.0,
+  "f1": 0.20363747538349913,
+  "level_inference_accuracy": 0.5104122854761959,
+  "mode": "alias",
+  "churn": 0.5
+ },
+ {
+  "events": 507.2,
+  "precision": 0.07229469599631587,
+  "recall": 1.0,
+  "f1": 0.13482693857715736,
+  "level_inference_accuracy": 0.5104122854761959,
+  "mode": "alias",
+  "churn": 1.0
+ }
+]

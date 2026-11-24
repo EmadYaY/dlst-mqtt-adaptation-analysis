@@ -1,0 +1,8 @@
+{
+ "insider_original": 1.0,
+ "insider_with_signature_check": 0.0,
+ "outsider_original": 0.0,
+ "replay_original": 0.0,
+ "genuine_with_signature_check": 1.0,
+ "trials": 1000
+}
