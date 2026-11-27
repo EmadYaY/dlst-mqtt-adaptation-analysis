@@ -1,6 +1,6 @@
 """E2: manipulation of the resource trigger that drives level downgrades.
 
-Residual-time condition (Eq. 1 of the paper):  tau(t) = B(t)/P(t) - (T - t) <= 0
+Resource trigger (Eq. 1 of the paper):  tau(t) = B(t)/P(t) - (T - t) <= 0
 triggers one downgrade step. All powers are normalised to the reference consumption
 P_ref (all topics at the top of their range, no attack).
 """
@@ -58,6 +58,7 @@ def simulate(policy, rho, cfg=PublisherConfig(), dt=1.0):
         "first_downgrade_delay_s": None if first_dg is None else max(0.0, first_dg - cfg.onset),
         "conf_off_low_fraction": sum(conf_off[n] for n in low) / len(low) / cfg.T,
         "mean_score_high": score_h / alive if alive else 0.0,
+        "conf_off_low_alive_fraction": (sum(conf_off[n] for n in low) / len(low) / alive) if alive else 0.0,
         "mission_completion": min(1.0, alive / cfg.T),
         "final_levels": {x.name: x.level for x in topics},
     }
@@ -89,11 +90,12 @@ if __name__ == "__main__":
                   round(r["mission_completion"], 3), r["final_levels"])
 
 
-def threshold_check(onsets=(0.0, 1000.0, 2500.0, 4000.0), mu=0.15, T=5000.0):
+def threshold_check(onsets=(0.0, 1000.0, 2500.0, 4000.0), mu=0.15, T=5000.0,
+                    idle_share=0.2, kappa=0.25):
     """E2b: compare the closed-form trigger threshold rho* = mu*T/(T - t_a) with the simulator."""
     rows = []
     for ta in onsets:
-        cfg = PublisherConfig(T=T, onset=ta, mu=mu)
+        cfg = PublisherConfig(T=T, onset=ta, mu=mu, idle_share=idle_share, kappa=kappa)
         lo, hi = 0.0, 3.0
         for _ in range(40):
             mid = (lo + hi) / 2
@@ -101,5 +103,5 @@ def threshold_check(onsets=(0.0, 1000.0, 2500.0, 4000.0), mu=0.15, T=5000.0):
                 lo = mid
             else:
                 hi = mid
-        rows.append({"onset_s": ta, "analytic": mu * T / (T - ta), "simulated": hi})
+        rows.append({"mu": mu, "idle_share": idle_share, "kappa": kappa, "onset_s": ta, "analytic": mu * T / (T - ta), "simulated": hi})
     return rows
